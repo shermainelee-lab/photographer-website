@@ -1,0 +1,197 @@
+<title>Alice Huang Photography</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500&display=swap">
+<style>
+/* Layout: text-led hero, then a three-column grid where the middle column sits lower for rhythm, then two quiet text sections. */
+:root {
+  --font-head: "Newsreader", Georgia, "Times New Roman", serif;
+  --font-body: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --bg: #ECE9E4;
+  --ink: #2A2724;
+  --ink-2: #6C665F;
+  --line: #D8D3CB;
+  --btn-bg: #34302B;
+  --btn-fg: #F3F0EB;
+  --t1: #D6CFC4; --t2: #CCC6BC; --t3: #D9D2C9;
+  --t4: #C7CABF; --t5: #D4C9C2; --t6: #C9CBCD;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1C1A18; --ink: #ECE8E2; --ink-2: #A39C93; --line: #34302C;
+    --btn-bg: #ECE8E2; --btn-fg: #1C1A18;
+    --t1: #2E2A26; --t2: #2B2926; --t3: #2F2B27;
+    --t4: #292B27; --t5: #2F2827; --t6: #282A2D;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1C1A18; --ink: #ECE8E2; --ink-2: #A39C93; --line: #34302C;
+  --btn-bg: #ECE8E2; --btn-fg: #1C1A18;
+  --t1: #2E2A26; --t2: #2B2926; --t3: #2F2B27;
+  --t4: #292B27; --t5: #2F2827; --t6: #282A2D;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 16px/1.7 var(--font-body);
+  padding-block: 0;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+h1, h2 { font-family: var(--font-head); font-weight: 400; margin: 0; text-wrap: balance; font-optical-sizing: auto; }
+p { margin: 0; }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+
+.wrap { max-width: 1180px; margin: 0 auto; padding-inline: clamp(0px, 3vw, 32px); }
+
+/* Hero */
+.hero { padding-block: clamp(72px, 13vh, 150px) clamp(64px, 9vh, 96px); display: flex; flex-direction: column; align-items: flex-start; gap: 28px; }
+.hero h1 { font-size: clamp(3.4rem, 10.5vw, 8rem); line-height: 0.98; letter-spacing: -0.025em; }
+.lede { font-family: var(--font-head); font-size: clamp(1.3rem, 2.6vw, 1.9rem); line-height: 1.35; max-width: 28ch; color: var(--ink-2); }
+.btn {
+  display: inline-block; margin-top: 8px; padding: 15px 30px; border-radius: 999px;
+  background: var(--btn-bg); color: var(--btn-fg); text-decoration: none;
+  font-size: 15px; font-weight: 500; letter-spacing: 0.01em; transition: opacity .2s;
+}
+.btn:hover { opacity: .86; }
+
+/* Portfolio */
+.work { padding-block: 24px clamp(96px, 14vw, 170px); }
+.label { font-size: 12.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 36px; }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(28px, 4vw, 56px) clamp(20px, 3vw, 44px); }
+.grid figure { margin: 0; }
+.grid figure:nth-child(3n + 2) { margin-top: clamp(32px, 6vw, 80px); }
+.ph {
+  aspect-ratio: 4 / 5; max-width: 100%; border-radius: 3px;
+  background: linear-gradient(165deg, var(--tone), color-mix(in srgb, var(--tone) 90%, var(--ink)));
+  display: grid; place-items: center; color: var(--ink-2); font-size: 13px; letter-spacing: 0.04em;
+}
+.ph span { opacity: .75; }
+.ph { overflow: hidden; }
+.ph img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; }
+figcaption { margin-top: 14px; font-size: 14px; line-height: 1.45; }
+figcaption small { display: block; color: var(--ink-2); font-size: 13px; }
+@media (max-width: 720px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid figure:nth-child(3n + 2) { margin-top: 0; }
+  .grid figure:nth-child(2n) { margin-top: 36px; }
+}
+
+/* About */
+.about { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(32px, 6vw, 96px); padding-block: clamp(72px, 10vw, 130px); border-top: 1px solid var(--line); }
+.about h2, .contact h2 { font-size: clamp(2rem, 4.4vw, 3.2rem); line-height: 1.1; letter-spacing: -0.015em; }
+.about .copy { display: flex; flex-direction: column; gap: 22px; max-width: 54ch; font-size: 17px; }
+@media (max-width: 720px) { .about { grid-template-columns: minmax(0, 1fr); } }
+
+/* Contact */
+.contact { padding-block: clamp(72px, 10vw, 130px) 56px; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 26px; align-items: flex-start; }
+.contact p { max-width: 46ch; color: var(--ink-2); font-size: 17px; }
+.email {
+  font-family: var(--font-head); font-size: clamp(1.6rem, 5vw, 3rem); line-height: 1.2; letter-spacing: -0.01em;
+  color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 8px;
+  text-decoration-color: var(--ink-2); overflow-wrap: anywhere; user-select: all;
+}
+.email:hover { text-decoration-color: var(--ink); }
+.copy-row { display: flex; align-items: center; gap: 14px; min-height: 28px; }
+.copy-btn { background: none; border: 0; padding: 0; font: 500 14px var(--font-body); color: var(--ink-2); cursor: pointer; text-decoration: underline; text-underline-offset: 4px; }
+.copy-btn:hover { color: var(--ink); }
+.copied { font-size: 14px; color: var(--ink-2); }
+.copied:empty { display: none; }
+
+.foot { padding-block: 40px 56px; font-size: 13px; color: var(--ink-2); }
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
+</style>
+
+<div class="wrap">
+  <header class="hero">
+    <h1>Alice Huang</h1>
+    <p class="lede">I photograph weddings and portraits, quietly and in good light.</p>
+    <a class="btn" id="cta" href="#contact">Get in touch</a>
+  </header>
+
+  <section class="work" aria-labelledby="work-label">
+    <h2 class="label" id="work-label" style="font-family: var(--font-body); font-weight: 400;">Selected work</h2>
+    <div class="grid">
+      <figure>
+        <div class="ph" style="--tone: var(--t1)"><img src="wedding-1.png" width="408" height="612" alt="A bride and groom embrace behind a white bouquet on a lakeside platform"></div>
+        <figcaption>Behind the bouquet<small>Wedding</small></figcaption>
+      </figure>
+      <figure>
+        <div class="ph" style="--tone: var(--t2)"><span>Photo goes here</span></div>
+        <figcaption>Studio light, late afternoon<small>Portrait</small></figcaption>
+      </figure>
+      <figure>
+        <div class="ph" style="--tone: var(--t3)"><span>Photo goes here</span></div>
+        <figcaption>First dance<small>Wedding</small></figcaption>
+      </figure>
+      <figure>
+        <div class="ph" style="--tone: var(--t4)"><span>Photo goes here</span></div>
+        <figcaption>Family on the stairs<small>Portrait</small></figcaption>
+      </figure>
+      <figure>
+        <div class="ph" style="--tone: var(--t5)"><span>Photo goes here</span></div>
+        <figcaption>Garden confetti<small>Wedding</small></figcaption>
+      </figure>
+      <figure>
+        <div class="ph" style="--tone: var(--t6)"><span>Photo goes here</span></div>
+        <figcaption>Window seat<small>Portrait</small></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="about" aria-labelledby="about-h">
+    <h2 id="about-h">Hello, I&rsquo;m Alice.</h2>
+    <div class="copy">
+      <p>I started with a borrowed camera at my sister&rsquo;s wedding and never really stopped. Today I photograph couples, families and individuals, usually on foot and usually in natural light. I stay out of the way so your day can go the way it was meant to.</p>
+      <p>I aim for pictures that look like you and feel like the moment they came from. I take a limited number of bookings each season, so every client gets my full attention before, during and after.</p>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-h" tabindex="-1">
+    <h2 id="contact-h">Let&rsquo;s talk about your day.</h2>
+    <p>Tell me the date, the place and what matters most to you. I usually reply within two days.</p>
+    <a class="email" id="email" href="mailto:hello@alicehuang.com">hello@alicehuang.com</a>
+    <div class="copy-row">
+      <button class="copy-btn" id="copy" type="button">Copy address</button>
+      <span class="copied" id="copied" role="status" aria-live="polite"></span>
+    </div>
+  </section>
+
+  <footer class="foot">&copy; 2026 Alice Huang</footer>
+</div>
+
+<script>
+(function () {
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cta = document.getElementById('cta');
+  cta.addEventListener('click', function (e) {
+    var target = document.getElementById('contact');
+    if (!target || !target.scrollIntoView) return;
+    e.preventDefault();
+    target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+  });
+
+  var copy = document.getElementById('copy');
+  var note = document.getElementById('copied');
+  var email = document.getElementById('email');
+  copy.addEventListener('click', function () {
+    var text = email.textContent.trim();
+    function selectIt() {
+      var r = document.createRange(); r.selectNodeContents(email);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      note.textContent = 'Press copy to finish';
+    }
+    try {
+      navigator.clipboard.writeText(text).then(function () {
+        note.textContent = 'Copied';
+        setTimeout(function () { note.textContent = ''; }, 2500);
+      }, selectIt);
+    } catch (err) { selectIt(); }
+  });
+})();
+</script>
