@@ -8,7 +8,7 @@
 <meta property="og:title" content="Alice Huang Photography">
 <meta property="og:description" content="Weddings and portraits, quietly and in good light.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2334302B'/%3E%3Ctext x='16' y='22' font-size='17' text-anchor='middle' fill='%23F3F0EB' font-family='Georgia,serif'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23D4145A'/%3E%3Ctext x='16' y='22' font-size='17' text-anchor='middle' fill='%23FFFFFF' font-family='Georgia,serif'%3EA%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500&display=swap">
@@ -23,29 +23,30 @@ img { max-width: 100%; }
 :root {
   --font-head: "Newsreader", Georgia, "Times New Roman", serif;
   --font-body: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --bg: #ECE9E4;
-  --ink: #2A2724;
-  --ink-2: #6C665F;
-  --line: #D8D3CB;
-  --btn-bg: #34302B;
-  --btn-fg: #F3F0EB;
-  --t1: #D6CFC4; --t2: #CCC6BC; --t3: #D9D2C9;
-  --t4: #C7CABF; --t5: #D4C9C2; --t6: #C9CBCD;
+  --bg: #FFEFE3;
+  --ink: #2B1B3A;
+  --ink-2: #6A4F7C;
+  --line: #F2CDB8;
+  --accent: #D4145A;
+  --btn-bg: #D4145A;
+  --btn-fg: #FFFFFF;
+  --t1: #FFA99B; --t2: #FFD866; --t3: #8FE0BE;
+  --t4: #8CC8FF; --t5: #C9A6FF; --t6: #FF9FCB;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #1C1A18; --ink: #ECE8E2; --ink-2: #A39C93; --line: #34302C;
-    --btn-bg: #ECE8E2; --btn-fg: #1C1A18;
-    --t1: #2E2A26; --t2: #2B2926; --t3: #2F2B27;
-    --t4: #292B27; --t5: #2F2827; --t6: #282A2D;
+    --bg: #1B1033; --ink: #FFEFE3; --ink-2: #C3AADB; --line: #3D2A63;
+    --accent: #FF7AA8; --btn-bg: #FF6B9A; --btn-fg: #1B1033;
+    --t1: #8E3247; --t2: #8A6A12; --t3: #1D6B53;
+    --t4: #22609A; --t5: #5E3AA3; --t6: #8E2F73;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --bg: #1C1A18; --ink: #ECE8E2; --ink-2: #A39C93; --line: #34302C;
-  --btn-bg: #ECE8E2; --btn-fg: #1C1A18;
-  --t1: #2E2A26; --t2: #2B2926; --t3: #2F2B27;
-  --t4: #292B27; --t5: #2F2827; --t6: #282A2D;
+  --bg: #1B1033; --ink: #FFEFE3; --ink-2: #C3AADB; --line: #3D2A63;
+  --accent: #FF7AA8; --btn-bg: #FF6B9A; --btn-fg: #1B1033;
+  --t1: #8E3247; --t2: #8A6A12; --t3: #1D6B53;
+  --t4: #22609A; --t5: #5E3AA3; --t6: #8E2F73;
   color-scheme: dark;
 }
 
@@ -61,7 +62,7 @@ body {
 }
 h1, h2 { font-family: var(--font-head); font-weight: 400; margin: 0; text-wrap: balance; font-optical-sizing: auto; }
 p { margin: 0; }
-:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
 .wrap { max-width: 1180px; margin: 0 auto; padding-inline: clamp(0px, 3vw, 32px); }
 
@@ -78,7 +79,7 @@ p { margin: 0; }
 
 /* Portfolio */
 .work { padding-block: 24px clamp(96px, 14vw, 170px); }
-.label { font-size: 12.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 36px; }
+.label { font-size: 12.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 36px; }
 .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(28px, 4vw, 56px) clamp(20px, 3vw, 44px); }
 .grid figure { margin: 0; }
 .grid figure:nth-child(3n + 2) { margin-top: clamp(32px, 6vw, 80px); }
@@ -87,7 +88,7 @@ p { margin: 0; }
   background: linear-gradient(165deg, var(--tone), color-mix(in srgb, var(--tone) 90%, var(--ink)));
   display: grid; place-items: center; color: var(--ink-2); font-size: 13px; letter-spacing: 0.04em;
 }
-.ph span { opacity: .75; }
+.ph span { opacity: .7; color: var(--ink); }
 .ph { overflow: hidden; }
 .ph img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; }
 figcaption { margin-top: 14px; font-size: 14px; line-height: 1.45; }
@@ -110,9 +111,9 @@ figcaption small { display: block; color: var(--ink-2); font-size: 13px; }
 .email {
   font-family: var(--font-head); font-size: clamp(1.6rem, 5vw, 3rem); line-height: 1.2; letter-spacing: -0.01em;
   color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 8px;
-  text-decoration-color: var(--ink-2); overflow-wrap: anywhere; user-select: all;
+  text-decoration-color: var(--accent); text-decoration-thickness: 2px; overflow-wrap: anywhere; user-select: all;
 }
-.email:hover { text-decoration-color: var(--ink); }
+.email:hover { color: var(--accent); }
 .copy-row { display: flex; align-items: center; gap: 14px; min-height: 28px; }
 .copy-btn { background: none; border: 0; padding: 0; font: 500 14px var(--font-body); color: var(--ink-2); cursor: pointer; text-decoration: underline; text-underline-offset: 4px; }
 .copy-btn:hover { color: var(--ink); }
